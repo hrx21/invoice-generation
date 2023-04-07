@@ -25,18 +25,14 @@ const Home = () => {
                     return(
                         <div class="max-w-5xl mx-auto py-8 bg-white">
                         <article class="overflow-hidden">
-                         <div class="bg-[white] rounded-b-md">
-                          <div class="">
-                           <div class="space-y-6 text-slate-700">
-                            {/* <img className="w-[100px] h-[50px]" src={ml.company_logo} /> */}
-                            <p class="text-xl font-extrabold tracking-tight uppercase font-body py-2">
-                             {ml.company}
-                            </p>
+                         <div class="bg-slate-100 h-full rounded-b-md">
+                           <div class="space-y-6 text-slate-700 container py-6">
+                            <img className="w-[200px] h-[100px]" src={ml?.company_logo} alt="logo" />  
+                            {/* <p class="text-xl font-extrabold tracking-tight uppercase font-body py-2">{ml.company}</p> */}
                            </div>
-                          </div>
-                          <div class="">
+                          <div class="container">
                            <div class="flex w-full">
-                            <div class="grid grid-cols-4 gap-12 bg-slate-100 py-10 px-6">
+                            <div class="grid grid-cols-3 gap-10">
                             <div class="text-sm font-light text-slate-500">
                               <p class="text-lg font-bold text-slate-800 mb-3 text-justify">Bill To</p>
                               <p className="text-base font-medium"> {ml.billing_address}</p>
@@ -49,8 +45,8 @@ const Home = () => {
                              <p class="text-lg font-bold text-slate-800 mb-3">
                                Invoice Details
                               </p>
-                              <p className="text-base font-medium">Invoice No: {ml.invoice_no}</p>
-                              <p className="text-base font-medium">Invoice Date: {ml.invoice_date}</p>
+                              <p className="text-base font-medium"> <strong>Invoice No:</strong>  {ml.invoice_no}</p>
+                              <p className="text-base font-medium"> <strong>Invoice Date:</strong>  {ml.invoice_date}</p>
                               <p className="text-base font-medium">{ml.invoice}</p>
                              </div>
 
@@ -58,19 +54,23 @@ const Home = () => {
                              <p class="text-lg font-bold text-slate-800 mb-3">
                                Order Details
                               </p>
-                              <p className="text-base font-medium whitespace-nowrap">Order No: {ml.order_no}</p>
-                              <p className="text-base font-medium">Order Date: {ml.order_date}</p>
-                              {/* <p className="text-base font-medium">GSTIN: {ml.gst_no}</p>
-                              <p className="text-base font-medium">PAN NO: {ml.pan_no}</p>
-                              <p className="text-base font-medium">{ml.invoice}</p> */}
+                              <p className="text-base font-medium whitespace-nowrap"> <strong>Order No:</strong> {ml.order_no}</p>
+                              <p className="text-base font-medium"> <strong>Order Date:</strong>  {ml.order_date}</p>  
                              </div>
-                 
+
+                             <div class="text-sm font-light text-slate-500">
+                             <p class="text-lg font-bold text-slate-800 mb-3">
+                               Other Details
+                              </p>
+                              <p className="text-base font-medium whitespace-nowrap"> <strong>PAN No:</strong>  {ml.pan_no} </p>
+                              <p className="text-base font-medium"> <strong>GST No:</strong>  {ml.gst_no}</p>
+                             </div>
                             </div>
                            </div>
                           </div>
                       
                          <div class="">
-                           <div class="flex flex-col mx-0 mt-8">
+                           <div class="flex flex-col mx-0 container py-6">
                             <table class="min-w-full divide-y divide-slate-500">
                              <thead>
                               <tr>
@@ -103,12 +103,12 @@ const Home = () => {
                                </th>
                               </tr>
                              </thead>
-                             <tbody>
+                             <tbody className="">
                               <tr class="border-b border-slate-200">
                                <td class="py-4 pl-4 pr-3 text-sm sm:pl-6 md:pl-0">
                                 <div class="font-medium text-slate-700">{ml.product}</div>
                                </td>
-                               <td class="hidden px-3 py-4 font-medium text-base  whitespace-pre-line text-slate-800 sm:table-cell">
+                               <td class="hidden px-3 py-4 font-medium text-sm text-slate-800 sm:table-cell">
                                 {ml.product_desc}
                                </td>
                                <td class="hidden px-3 py-4 font-medium text-base whitespace-nowrap text-slate-800 h-[50px] sm:table-cell">
@@ -139,50 +139,28 @@ const Home = () => {
                             </table>
                            </div>
                           </div> 
-                          <div className="flex justify-end">
-                            <span>Subtotal</span>
-                            <span>{ml.net_amount}</span>
+
+                          <div className="container">
+                             <p className="font-normal text-lg">Amount In Words:</p>
+                            <span className="font-semibold text-base">{ml.amount_in_words}</span>
                           </div>
-                       {/* <div>
-                            <table>
-                                <tr>
-                                <th scope="row" colspan="3" class="hidden pt-6 pl-6 pr-3 text-sm font-light text-slate-500 sm:table-cell md:pl-0">
-                                Discount
-                                </th>
-                                <th scope="row" class="pt-6 pl-4 pr-3 text-sm font-light  text-slate-500 sm:hidden">
-                                Discount
-                                </th>
-                                <td class="pt-6 pl-3 pr-4 text-sm  text-slate-500 sm:pr-6 md:pr-0">
-                                {ml.discount}
-                                </td>
-                                </tr>
-                            <tr>
-                            <th scope="row" colspan="3" class="hidden pt-4 pl-6 pr-3 text-sm font-light text-right text-slate-500 sm:table-cell md:pl-0">
-                            Tax
-                            </th>
-                            <th scope="row" class="pt-4 pl-4 pr-3 text-sm font-light text-left text-slate-500 sm:hidden">
-                            Tax
-                            </th>
-                            <td class="pt-4 pl-3 pr-4 text-sm whitespace-nowrap text-slate-500 sm:pr-6 md:pr-0">
-                            {ml.tax_amount}
-                            </td>
-                            </tr>
 
-                                <tr>
-                                <th scope="row" colspan="3" class="hidden pt-4 pl-6 pr-3 text-sm font-normal text-right text-slate-700 sm:table-cell md:pl-0">
-                                Total
-                                </th>
-                                <th scope="row" class="pt-4 pl-4 pr-3 text-sm font-normal whitespace-nowrap text-slate-700 sm:hidden">
-                                Total
-                                </th>
-                                <td class="pt-4 pl-3 pr-4 text-sm font-normal whitespace-nowrap text-slate-700 sm:pr-6 md:pr-0">
-                                {ml.total_amount}
-                                </td>
-                                </tr>
-                                </table>
-                            </div>  */}
+                          <div className="grid grid-rows-2 place-content-end pb-4 container ">
+                            <div>
+                              <span className="text-base font-semibold">Subtotal: </span>
+                              <span className="text-base font-medium">₹ {ml.net_amount}</span>
+                            </div>
+                            <div>
+                            <span className="text-base font-semibold">Tax Rate: </span>
+                              <span className="text-base font-medium">₹ {ml.tax_amount}</span>
+                            </div>
+                            <div>
+                              <span className="text-base font-semibold">Total: </span>
+                              <span className="text-base font-medium">₹ {ml.total_amount}</span>
+                            </div>
+                          </div>
 
-                         </div>
+                         </div>                           {/* main bg div */}
                         </article>
                        </div>
                     )

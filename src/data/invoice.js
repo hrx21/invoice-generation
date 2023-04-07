@@ -1,8 +1,9 @@
+import logo from  "../assets/samsung-logo-png-1294.png"         
+
 export const invoice = [
     {
-        company: "Samsung",
-        company_logo: "../assets/sam.png",
-        // address:"Cts No 1801, Landmark Building, Sanghvi Aura, Shop No. 05 C Wing, Santacruz East, Mumbai, Maharashtra 400055",
+        company: "Samsung",        
+        company_logo: logo,
         billing_address: "Building No.3 ,5 & 6, 4th Office Level, Mindspace, Thane - Belapur Rd, Airoli, Navi Mumbai, Maharashtra 400708        ",
         pan_no: "AALCA0171E",
         gst_no:"08AALC0171E1ZZ",
@@ -14,7 +15,7 @@ export const invoice = [
         invoice_no:"2023-001",
         invoice_date:"13/03/2023",
         product:"Samsung Galaxy S23 5G (Lavender, 8GB, 256GB Storage)",
-        product_desc:"Designed with the planet in mind - Unbox the change you want to see in the world. Crafted with recycled glass and PET film and colored with natural dyes, each phone is tucked into a box made of recycled paper and paper-based protective film.",
+        product_desc:"Designed with the planet in mind a box made of recycled paper and paper-based protective film.",
         quantity:1,
         discount:0 ,
         net_amount:79999,
