@@ -12,6 +12,7 @@ function Router() {
     <Routes>
         <Route exact path='/' element={<App/>} />
         <Route exact path='/home' element={<Home/>} />
+        <Route exact path='/invoice' element={<Home/>} />
     </Routes>
     </BrowserRouter>
   )

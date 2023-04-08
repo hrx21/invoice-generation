@@ -15,7 +15,7 @@ export const invoice = [
         invoice_no:"2023-001",
         invoice_date:"13/03/2023",
         product:"Samsung Galaxy S23 5G (Lavender, 8GB, 256GB Storage)",
-        product_desc:"Designed with the planet in mind a box made of recycled paper and paper-based protective film.",
+        product_desc:"Designed with the planet in mind a box made of recycled paper.",
         quantity:1,
         discount:0 ,
         net_amount:79999,
